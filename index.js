@@ -35,11 +35,13 @@ const renderTodos = function (todos, filters) {
         return !todo.completed
     })
 
-    document.querySelector('#todos').innerHTML = ''
+    todoDiv.innerHTML = '';
+    incompleteDiv.innerHTML = '';
+    completeDiv.innerHTML = '';
 
     const summary = document.createElement('h2')
     summary.textContent = `You have ${incompleteTodos.length} todos left`
-    document.querySelector('#todos').appendChild(summary)
+    todoDiv.appendChild(summary)
 
     filteredTodos.forEach(function (todo) {
         const newTodoDiv = document.createElement('div');
@@ -62,7 +64,11 @@ const renderTodos = function (todos, filters) {
         } else {
             incompleteDiv.appendChild(newTodoDiv);
         }
-        
+                
+        checkbox.addEventListener('change', function(){
+            todo.completed = this.checked;
+            renderTodos(todos,filters);
+        })
     })
 }
 
