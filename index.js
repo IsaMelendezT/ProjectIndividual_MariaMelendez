@@ -19,6 +19,9 @@ const filters = {
     searchText: '',
     hideCompleted: false
 }
+const todoDiv = document.querySelector('#todos');
+const incompleteDiv = document.querySelector('#incomplete');
+const completeDiv = document.querySelector('#complete');
 
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
@@ -39,9 +42,27 @@ const renderTodos = function (todos, filters) {
     document.querySelector('#todos').appendChild(summary)
 
     filteredTodos.forEach(function (todo) {
-        const p = document.createElement('p')
-        p.textContent = todo.text
-        document.querySelector('#todos').appendChild(p)
+        const newTodoDiv = document.createElement('div');
+        
+        const checkbox = document.createElement('input')
+        checkbox.type = "checkbox";
+        checkbox.style.width = "1.5em";
+        checkbox.style.height = "1.5em";
+        checkbox.checked = todo.completed;
+
+        newTodoDiv.appendChild(checkbox)
+
+        const label = document.createElement('label');
+        label.textContent = todo.text;
+        newTodoDiv.appendChild(label)
+
+        if(todo.completed){
+            label.className = "task-completed"
+            completeDiv.appendChild(newTodoDiv);
+        } else {
+            incompleteDiv.appendChild(newTodoDiv);
+        }
+        
     })
 }
 
