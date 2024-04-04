@@ -50,9 +50,26 @@ renderTodos(todos, filters)
 /* 
 exercise - complete the project based on the following instructions
 part 1
-1. add event listener for the button to add todos
-2. add event listener for the search input to filter todos
-3. add event listener for the checkbox to filter todos based on their completions
+1. add event listener for the button to add todos */
+const addBtn = document.getElementById('addTodo');
+
+addBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    const input = document.querySelector('#new-todo input').value;
+    console.log(input)
+    if (input === ""){
+        alert("Please enter a Todo to add")
+    } else {
+        todos.push({text:input,completed:false});
+        renderTodos(todos,filters);
+        document.querySelector('#new-todo input').value ="";
+    }
+
+})
+
+/*2. add event listener for the search input to filter todos*/
+
+/*3. add event listener for the checkbox to filter todos based on their completions
 */
 
 /* Part 2
