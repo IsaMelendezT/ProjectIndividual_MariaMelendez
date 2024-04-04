@@ -81,6 +81,13 @@ searchInput.addEventListener('input', function(){
 /*3. add event listener for the checkbox to filter todos based on their completions
 */
 
+const hideCompletedBox = document.getElementById('hide-completed');
+
+hideCompletedBox.addEventListener('change',function(){
+    filters.hideCompleted = this.checked;
+    renderTodos(todos,filters)
+})
+
 /* Part 2
 1. replace paragraphs in todos with a checkbox input and create a checknox for each todo item
 2. if the todo is complete the item should be checked and there should be strike through for the item 
