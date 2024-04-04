@@ -7,22 +7,26 @@
 
 
 <body>
+    <!-- Main container, will hold all the elements of the page-->
     <div class="container">
+
         <h1>Your To-do List</h1>
-        
+        <!-- Search Field -->
         <input id="search-text" type="text" placeholder="Filter todos">
         
+        <!-- Hide completed checbox option -->
         <label>
             <input type="checkbox" id="hide-completed"> Hide completed
         </label>
     
+        <!-- In this container all todos will be inserted accordigly if they are completed or not -->
         <div id="todos"></div>
         <div class="status">
             <div id="incomplete"></div>
             <div id="complete"></div>
         </div>
 
-    
+        <!-- Add Todo option  -->
         <form id="new-todo">
             <input type="text" placeholder="Something to do">
             <button id="addTodo">Add Todo</button>

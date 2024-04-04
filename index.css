@@ -1,16 +1,20 @@
+/*Styling task complete class labels*/
 .task-completed {
     text-decoration: line-through;
 }
+
 
 .newDivTodo{
     display: inline
 }
 
+/*floating left checkboxes*/
 .checkbox {
     float: left;
 
 }
 
+/*Styling the body and inserting background image*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
@@ -23,6 +27,7 @@ body {
     position: relative;
 }
 
+/*Styling main container*/
 .container {
     background: white;
     width: 30em;
@@ -34,6 +39,7 @@ body {
     display: block;
 }
 
+/*Styling both input fields*/
 input {
     line-height: 2em;
     border: 1px blue solid;
@@ -42,16 +48,20 @@ input {
     margin: 3% 0;
 }
 
+/*Styling for the todos to appear in two columns, complete and incomplete*/
 #incomplete{
     width: 48%;
     float: left;
     min-height: 30vh;
+    border-right: 1px blue dashed;
 }
 
+/*Clearing float efect from #new-todo container*/
 #new-todo{
     clear: both;
 }
 
+/*Styling buttons*/
 button {
     background-color: blue;
     color: white;
@@ -66,6 +76,7 @@ label {
     font-size: 1em;
 }
 
+/*Styling checkbox*/
 #hide-completed {
     width: 1.5em;
     height: 1.5em;
@@ -75,11 +86,8 @@ h2 {
     font-size: 1.5em;
 }
 
+/*Giving Maximum widht to status container and center it*/
 .status{
     width: 85%;
     margin: auto;
-}
-
-#complete, #incomplete {
-    text-align: left;
 }
