@@ -69,6 +69,15 @@ addBtn.addEventListener('click', function(e){
 
 /*2. add event listener for the search input to filter todos*/
 
+const searchInput = document.getElementById('search-text');
+
+searchInput.addEventListener('input', function(){
+    filters.searchText = searchInput.value;
+    console.log(filters.searchText)
+    renderTodos(todos,filters)
+})
+
+
 /*3. add event listener for the checkbox to filter todos based on their completions
 */
 
